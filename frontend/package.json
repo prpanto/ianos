@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@ianicdev/dataforms2": "^1.0.0",
+    "@ianicdev/datatables2": "^0.0.48",
+    "@mdi/font": "^7.4.47",
+    "@nuxtjs/i18n": "^8.5.5",
+    "@pinia/nuxt": "^0.5.5",
+    "echarts": "^5.5.1",
+    "idb-keyval": "^6.2.1",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "moment": "^2.30.1",
+    "nuxt": "^3.13.0",
+    "nuxt-auth-sanctum": "^0.5.1",
+    "nuxt-echarts": "^0.2.3",
+    "pinia": "^2.2.4",
+    "unstorage": "^1.12.0",
+    "vue": "latest",
+    "vue-router": "latest",
+    "vuetify-nuxt-module": "^0.18.3"
+  }
+}

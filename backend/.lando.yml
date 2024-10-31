@@ -1,0 +1,30 @@
+name: laravel-ianic
+recipe: laravel
+config:
+  php: 8.3
+  via: apache:2.4
+  webroot: public
+  database: mariadb:10.11
+  xdebug: true
+  cache: memcached
+services:
+  appserver:
+    overrides:
+      environment:
+        XDEBUG_CONFIG: 'discover_client_host=0 client_host=host.docker.internal'
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+proxy:
+  appserver:
+    - laravel-ianic.lndo.site
+
+
+
+
+
+
+
+
+
