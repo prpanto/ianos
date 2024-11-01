@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+use App\Http\Resources\CommentCollection;
 
 
 class PostController extends Controller
@@ -31,7 +32,7 @@ class PostController extends Controller
     {
         abort_if(!$post, 404, response()->json(['message' => 'Post not found']));
 
-        $comments = $post->comments;
+        $comments = new CommentCollection($post->comments);
 
         return response()->json(['post' => $post, 'comments' => $comments]);
     }
