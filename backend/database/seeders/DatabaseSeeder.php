@@ -16,13 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()
-            ->count(100)
-            ->has(Post::factory(rand(3, 5))
-                ->count(1)
-                ->hasAttached(Tag::factory()->count(1))
-                ->has(Comment::factory()->count(rand(5, 10)))
-            )
-            ->create();
+        for ($i=0; $i < 100; $i++) {
+            $user = User::factory()->create();
+            $post = Post::factory()->for($user)->hasAttached(Tag::factory(1))->create();
+
+            $userForCommentOne = User::factory()->create();
+            Comment::factory()->for($userForCommentOne)->for($post)->create();
+            $userForCommentTwo = User::factory()->create();
+            Comment::factory()->for($userForCommentTwo)->for($post)->create();
+        }
     }
 }
